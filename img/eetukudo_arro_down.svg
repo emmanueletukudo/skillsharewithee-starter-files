@@ -1,0 +1,5 @@
+<svg id="arrow-down-circle" xmlns="http://www.w3.org/2000/svg" width="84" height="84" viewBox="0 0 84 84">
+  <circle id="Ellipse_2" data-name="Ellipse 2" cx="40" cy="40" r="40" transform="translate(2 2)" stroke-width="4" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path id="Path_2" data-name="Path 2" d="M8,12,24,28,40,12" transform="translate(18 30)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+  <line id="Line_1" data-name="Line 1" y2="32" transform="translate(42 26)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+</svg>

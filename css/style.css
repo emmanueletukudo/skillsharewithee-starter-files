@@ -1,0 +1,495 @@
+/* Created by Emmanuel Etukudo */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    font-size: 1.2rem;
+    background: #F8F8F8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.main-header-title{
+    margin: 1rem;
+}
+
+.main-header-details{
+    margin: 1rem;
+}
+
+.main-header{
+    height: 100vh;
+    background-color: #0070BA;
+    background-image: url('../img/eetukudo_logo_bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.main-header-wrapper{
+    padding: 3rem;
+}
+.main-header-nav{
+    margin: .5rem 2rem;
+}
+
+
+.main-header-logo svg{
+    width: 133px;
+    height: 72px;
+}
+
+/* Beggin navigation style */
+.main-menu{
+    position: absolute;
+    right: 85px;
+    top: 35px;
+}
+
+.navigation_chekbox{
+    display: none;
+}
+.navigation-button{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #ffffff;
+    position: fixed;
+    right: 85px;
+    top: 35px;
+    z-index: 3000;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.18);
+}
+.navigation-icon{
+    margin-top: 1.2rem;
+    position: relative;
+    transition: all .5s ease;
+}
+
+.navigation-icon,
+.navigation-icon::before,
+.navigation-icon::after{
+    content: "";
+    background-color: #777;
+    height: 2px;
+    width: 1rem;
+    display: inline-block;
+    transition: all .5s ease;
+}
+
+.navigation-icon::before,
+.navigation-icon::after{
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.navigation-icon::after{
+    top: .3rem;
+}
+.navigation-icon::before{
+    bottom: .3rem;
+}
+.navigation-button:hover .navigation-icon::before{
+    top: -.4rem;
+}
+.navigation-button:hover .navigation-icon::after{
+    top: .5rem;
+}
+.navigation-button:hover + .navigation-icon::after{
+    top: .5rem;
+}
+.navigation_chekbox:checked + .navigation-button .navigation-icon{
+    background-color: transparent;
+}
+.navigation_chekbox:checked + .navigation-button .navigation-icon::before{
+    top: 0;
+    transform: rotate(-135deg);
+    background-color: #2998ff;
+}
+.navigation_chekbox:checked + .navigation-button  .navigation-icon::after{
+    top: 0;
+    transform: rotate(135deg);
+    background-color: #2998ff;
+}
+
+.main-menu-bg{
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    right: 85px;
+    top: 35px;
+    z-index: 1000;
+    text-align: center;
+    background-image: linear-gradient(to left bottom, #2998ff, #0070BA);
+    transition: all .3s;
+}
+.main-navigation-nav{
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100vh;
+    opacity: 0;
+    width: 0;
+    z-index: 1500;
+    transition: opacity .3s;
+}
+
+.main-navigation-list{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    list-style: none; 
+    color: #fff;
+
+}
+.main-menu-list-item{
+    margin: 1rem;
+}
+
+.main-navigation-link:link, .main-navigation-link:visited{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+    background-size: 220%;
+    transition: all .8s;
+}
+
+.main-navigation-link:hover{
+    background-position: 100%;
+    transform: translateX(1rem);
+    color: #2998ff;
+}
+
+.main-menu-list-item .main-header-social-icons{
+    margin: 0 auto;
+}
+.navigation_chekbox:checked ~ .main-menu-bg {
+    transform: scale(80);
+}
+
+.navigation_chekbox:checked ~ .main-navigation-nav{
+    opacity: 1;
+    width: 100%;
+}
+/* End menu style */
+
+.main-header-content{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+}
+
+.main-header-social-icons{
+    margin-left: 1.2rem;
+    width: 80px;
+    height: 50px;
+}
+
+.main-header-social-icons svg{
+    height: 100%;
+    width: 100%;
+
+}
+
+
+.main-header-content{
+    color: #ffffff;
+}
+
+.main-header-content-left{
+    padding: 2rem;
+    width: 50%;
+}
+
+.main-header-content-right{
+    margin: 0 auto;
+    padding: 2rem;
+}
+.main-header-image-dp svg{
+    position: absolute;
+    width: 200px;
+    height:200px;
+    text-align: center;
+    position: relative;
+    animation: bounce 1.5s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+.main-header-view-more-icon svg{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-left: 4rem;
+    text-align: center;
+    animation: bounce 2s ease-in-out infinite;
+    animation-direction: alternate;
+    
+}
+
+.main-header-view-more-icon:hover svg{
+    animation: scale .6s ease-in-out;
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(0);
+    }
+
+    40%{
+        transform: scale(1.1);
+    }
+
+    60%{
+        transform: scale(2.2);
+    }
+    100%{
+        transform: scale(3.3);
+    }
+}
+
+
+.main-header-logo-bg{
+    position: relative;
+    height: 582px;
+    width: 332px;
+    right: 0;
+    background-position: center;
+}
+
+.main-header-logo-bg svg{
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes bounce {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateY(-1rem);
+    }
+}
+
+/* style for portfolio beggins */
+
+.portfolio{
+    margin-top: -8rem;
+    margin-bottom: 2rem;
+
+}
+
+.portfolio-wrapper{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.portfolio-item-wrapper{
+    perspective: 150rem;
+    position: relative;
+    width:   340px;
+    height:  400px;
+    margin: 1rem;
+}
+
+.portfolio-item-side{
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    margin:  1.5rem;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-image: linear-gradient(to left bottom, #2998ff, #0070BA); 
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.18);
+    transition: all 1s;
+}
+.portfolio-item-side-back{
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.portfolio-view-link a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.portfolio-item-wrapper:hover .portfolio-item-side-front{
+    transform: rotateY(-180deg);
+}
+
+.portfolio-item-wrapper:hover .portfolio-item-side-back{
+    transform: rotateY(0);
+}
+
+.portfolio-item-img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-blend-mode: color;
+}
+.no-image{
+    color: #ffffff;
+    background-color: #0070BA;
+}   
+
+.p-img-noimage{
+    padding: 2rem;
+    position: relative;
+    top: 30%;
+    left: 20%;
+}
+
+
+.p-img-noimage::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 150px;
+    margin-top: .3rem;
+    background-color: #ffffff;
+}
+
+.p-img-noimage::after :hover{
+    color: #0070BA;
+    background-color: aqua;
+}
+
+
+/* Beggin style for skills section */
+
+.skills{
+    background-color: #ffffff;
+}
+.skills-section-wrapper{
+    padding: 3rem;
+}
+
+
+.skill-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    list-style: none;
+}
+
+.skill-list-item{
+    color: #ffffff;
+    font-size: .7rem;
+    margin: 1rem .5rem  1rem 0;
+    display: inline-block;
+    padding: .6rem;
+    border-radius: 30px;
+    background-image: linear-gradient(to left bottom, #2998ff, #0070BA);
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.18);
+    transition: all .5s ease-in-out;
+    /* background-image: linear-gradient(to bottom, ) */
+}
+
+.skill-list-item:hover{
+    transform: translateY(-.3rem);
+    cursor: pointer;
+}
+
+/* Beggin footer style */
+
+.footer{
+    color: #fff;
+    background-color: #0070BA;
+}
+
+.footer-wrapper{
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap; 
+    padding: 3rem;
+}
+
+.footer-form{
+    flex-grow: 3;
+    width: 100%;
+    padding: 2rem;
+    margin: 1rem;
+    width: 50%;
+    color: #fff;
+}
+
+.footer-title{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.footer-form .footer-input{
+    outline: none;
+    width: 100%;
+    padding: .5rem;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    transition: all .4s;
+    border-bottom: 1px solid #fff;
+}
+
+
+
+.footer-form .footer-input:focus{
+    color: #ffce06;
+    border-bottom: 1px solid #ffce06;
+}
+
+.footer-form .footer-input::placeholder{
+    color: #ffffff;
+}
+
+.btn-colored{
+    font-size: 1.2  rem;
+    margin-top: -2.7rem;
+    width: 100%;
+    border-radius: 30px;
+    padding: .5rem;
+    border: none;
+    color: #fff;
+    background-image: linear-gradient(to left bottom, #ffce06, #d8af05);
+}
+
+.footer-copyright-text{
+    font-size: .7rem;
+}
+
